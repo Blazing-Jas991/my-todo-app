@@ -1,0 +1,57 @@
+body {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    margin: 0 auto;
+    height: auto;
+}
+
+aside {
+    height: 100vh;
+    background-color: rgb(202, 202, 202);
+    padding-left: 15px;
+}
+
+main {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#my-dialog {
+    width: 800px;
+    height: 250px;
+    border-radius: 10px;
+    border: solid 2px aliceblue;
+    background-color: rgb(195, 192, 192);
+    box-shadow: 1px 3px 20px 5px rgba(57, 53, 53, 0.5);
+    position: fixed;
+    bottom: 450px;
+    left: 350px;
+    text-align: center;
+}
+
+.header-icon, .icons > div {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icons > div:hover {
+    background-color: aqua;
+}
+
+button {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
