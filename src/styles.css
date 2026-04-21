@@ -18,15 +18,15 @@ main {
 }
 
 #my-dialog {
-    width: 800px;
-    height: 250px;
+    width: 600px;
+    height: 200px;
     border-radius: 10px;
     border: solid 2px aliceblue;
     background-color: rgb(195, 192, 192);
     box-shadow: 1px 3px 20px 5px rgba(57, 53, 53, 0.5);
     position: fixed;
     bottom: 450px;
-    left: 350px;
+    left: 320px;
     text-align: center;
 }
 
@@ -41,7 +41,7 @@ main {
     background-color: aqua;
 }
 
-button {
+.add-btn {
     border-radius: 50%;
     height: 25px;
     width: 25px;
@@ -54,4 +54,43 @@ button {
 a {
     text-decoration: none;
     color: black
+}
+
+.new-task {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-task > p{
+    width: 250px;
+}
+
+.new-task > button {
+    background-color: rgb(232, 71, 71);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border: white;
+}
+
+#description {
+    width: 500px;
+    height: 50px;
+    border: none;
+    outline: none;
+}
+
+#options-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+#options-container > div {
+    border: 1px white solid;
+    padding: 5px;
 }
