@@ -1,17 +1,21 @@
 import "./styles.css";
-import { greeting } from "./template.js";
-import { monday } from "./template.js";
-import { showDialog } from "./mydomMethods.js";
+import { newTask } from "./mydomMethods.js";
 
-const addTask = document.querySelector('.add-task');
-addTask.addEventListener('click', () => {
-    showDialog()
+const addTaskButton = document.querySelector("#add-task");
+addTaskButton.addEventListener('click', newTask());
+
+const addButton = document.querySelector('#add-btn');
+addButton.addEventListener('click', ()=> {
+    const dialog = document.getElementById('dialog');
+    const container = document.querySelector('.new-task');
+    container.textContent = "";
+    dialog.showModal();
 });
 
-const secondTaskButton = document.querySelector('.add-task-button');
-secondTaskButton.addEventListener('click', ()=> {
-    showDialog();
-})
-
-console.log(greeting);
-console.log(monday);
+const secondTaskBtn = document.querySelector('.add-task-button');
+secondTaskBtn.addEventListener('click', ()=> {
+    const dialog = document.getElementById('dialog');
+    const container = document.querySelector('.new-task');
+    container.textContent = "";
+    dialog.showModal();
+});

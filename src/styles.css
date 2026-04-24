@@ -3,11 +3,10 @@ body {
     display: grid;
     grid-template-columns: 300px 1fr;
     margin: 0 auto;
-    height: auto;
 }
 
 aside {
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(202, 202, 202);
     padding-left: 15px;
 }
@@ -17,39 +16,71 @@ main {
     grid-template-rows: repeat(3, 1fr);
 }
 
-#my-dialog {
-    width: 600px;
-    height: 200px;
+#dialog {
+    max-width: 600px;
+    min-height: 200px;
     border-radius: 10px;
     border: solid 2px aliceblue;
-    background-color: rgb(195, 192, 192);
     box-shadow: 1px 3px 20px 5px rgba(57, 53, 53, 0.5);
-    position: fixed;
-    bottom: 450px;
-    left: 320px;
     text-align: center;
+    position: fixed;
+    bottom: 650px;
+    left: 250px;
+}
+
+.dialog-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+}
+
+.options-icon {
+    display: flex;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.options-icon > button {
+    border: none;
+    background: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: rgb(93, 92, 92);
+}
+
+.options-container {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-task {
+    width: 100px;
+    align-self: end;
+    background-color: rgb(210, 85, 85);
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: white;
+    padding: 5px;
+    border: none;
 }
 
 .header-icon, .icons > div {
-    padding: 5px;
+    /* padding: 5px; */
     display: flex;
     align-items: center;
+    padding: 10px;
     gap: 10px;
 }
 
 .icons > div:hover {
     background-color: aqua;
+    padding: 5px;
 }
 
-.add-btn {
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    border: none;
-    font-size: 20px;
-    color: white;
-    background-color: black;
-}
 
 a {
     text-decoration: none;
@@ -76,12 +107,29 @@ a {
     border: white;
 }
 
-#description {
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#description-input {
+    width: 500px;
+    height: 25px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+#title-input {
     width: 500px;
     height: 50px;
     border: none;
     outline: none;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
+
 
 #options-container {
     display: flex;
@@ -93,4 +141,18 @@ a {
 #options-container > div {
     border: 1px white solid;
     padding: 5px;
+}
+
+#input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-button {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
 }
