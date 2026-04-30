@@ -1,21 +1,21 @@
 import "./styles.css";
 import { newTask } from "./mydomMethods.js";
+import { cancelTask } from "./mydomMethods.js";
+import { addTaskFromPageButton } from "./mydomMethods.js";
+import { addTaskSideBar } from "./mydomMethods.js";
 
 const addTaskButton = document.querySelector("#add-task");
 addTaskButton.addEventListener('click', newTask());
 
 const addButton = document.querySelector('#add-btn');
-addButton.addEventListener('click', ()=> {
-    const dialog = document.getElementById('dialog');
-    const container = document.querySelector('.new-task');
-    container.textContent = "";
-    dialog.showModal();
-});
+addButton.addEventListener('click', addTaskSideBar);
 
 const secondTaskBtn = document.querySelector('.add-task-button');
-secondTaskBtn.addEventListener('click', ()=> {
-    const dialog = document.getElementById('dialog');
-    const container = document.querySelector('.new-task');
-    container.textContent = "";
-    dialog.showModal();
-});
+secondTaskBtn.addEventListener('click', addTaskFromPageButton);
+
+
+const cancelButton = document.getElementById('cancel-task');
+cancelButton.addEventListener('click', cancelTask);
+
+
+
