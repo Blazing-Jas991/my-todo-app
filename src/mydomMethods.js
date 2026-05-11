@@ -54,6 +54,7 @@ export function displayList() {
         list.append(titleHolder, itemDescription, dueTime, separator);
 
         checkBox.addEventListener('click', () => {
+            console.log(myTodoList);
             const index = myTodoList.findIndex(b => b.id === itemTitle.id);
             myTodoList.splice(index, 1);
             itemDescription.remove();
