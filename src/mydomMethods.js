@@ -62,6 +62,7 @@ export function displayList() {
             dueTime.remove();
             separator.remove();
             checkBox.remove();
+            localStorage.setItem("TodoList", JSON.stringify(myTodoList));
         });
     };
 };
