@@ -1,9 +1,9 @@
 import "./styles.css";
 import { newTask } from "./inbox.js";
 import { displayList } from "./inbox.js";
-import { cancelTask } from "./mydomMethods.js";
-import { addTaskFromPageButton } from "./mydomMethods.js";
-import { addTaskSideBar } from "./mydomMethods.js";
+import { cancelTask } from "./inbox.js";
+import { addTaskFromPageButton } from "./inbox.js";
+import { addTaskSideBar } from "./inbox.js";
 
 displayList();
 

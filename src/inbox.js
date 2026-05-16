@@ -1,10 +1,12 @@
 const myTodoList = JSON.parse(localStorage.getItem("TodoList")) || [];
 
+const NewTaskBtnContainer = document.querySelector('.new-task');
+const dialog = document.getElementById('dialog');
+const taskList = document.querySelector('.task-list');
+
 export function newTask() {
     const titleInput = document.querySelector('#title-input');
     const descriptionInput = document.querySelector('#description-input');
-    const dialog = document.getElementById('dialog');
-    const closeButton = document.querySelector("#add-task");
 
     const form = document.getElementById('task-form');
     const title = titleInput.value;
@@ -29,10 +31,8 @@ export function newTask() {
 
 };
 
-export function displayList() {
-    const list = document.querySelector('.task-list'); //Empty UL to store new items
-    const displayedText = document.querySelector('.new-task');
-    list.replaceChildren(); //list.textContent = "";
+export function displayList() { 
+    taskList.replaceChildren(); //list.textContent = "";
     
     for(const task of myTodoList) {
         const checkBox = Object.assign(document.createElement('input'), {
@@ -52,7 +52,7 @@ export function displayList() {
         itemTitle.textContent = `${task.title}`;
         itemDescription.textContent = `${task.description}`;
         dueTime.textContent = `${task.dueDate}`;
-        list.append(titleHolder, itemDescription, dueTime, separator);
+        taskList.append(titleHolder, itemDescription, dueTime, separator);
     
         checkBox.addEventListener('click', () => {
             console.log(myTodoList);
@@ -64,6 +64,31 @@ export function displayList() {
             separator.remove();
             checkBox.remove();
             localStorage.setItem("TodoList", JSON.stringify(myTodoList));
+
+            if (myTodoList.length === 0) {
+                taskList.style.display = 'flex';
+            };
         });
     };
+};
+
+export function cancelTask() {
+    if(taskList.childNodes.length === "") {
+        NewTaskBtnContainer.style.display = "block";
+        dialog.close();
+    } else {
+        displayList();
+        NewTaskBtnContainer.style.display = "none";
+        dialog.close();
+    };
+};
+
+export function addTaskFromPageButton() {
+    NewTaskBtnContainer.style.display = 'none';
+    dialog.showModal();
+};
+
+export function addTaskSideBar() {
+    NewTaskBtnContainer.style.display = 'none';
+    dialog.showModal();
 };
