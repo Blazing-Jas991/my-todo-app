@@ -201,3 +201,10 @@ form {
     width: 100%;
     text-align: left;
 }
+
+div:focus {
+    border: none;
+    background-color: purple;
+    color: white;
+
+}
