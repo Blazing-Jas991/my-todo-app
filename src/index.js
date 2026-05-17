@@ -7,8 +7,11 @@ import { addTaskSideBar } from "./inbox.js";
 
 displayList();
 
-const addTaskButton = document.querySelector("#add-task");
-addTaskButton.addEventListener('click', newTask);
+const addTask = document.querySelector("#task-form");
+addTask.addEventListener('submit', (e) => {
+    e.preventDefault();
+    newTask();
+});
 
 const addButton = document.querySelector('#add-btn');
 addButton.addEventListener('click', addTaskSideBar);

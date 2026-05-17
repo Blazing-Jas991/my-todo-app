@@ -1,12 +1,12 @@
 body {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 200px 1fr;
     margin: 0 auto;
 }
 
 aside {
-    min-height: 100vh;
+    height: 100vh;
     background-color: rgb(202, 202, 202);
     padding-left: 15px;
 }
@@ -22,14 +22,13 @@ main {
 }
 
 #dialog {
-    max-width: 600px;
-    min-height: 200px;
+    width: clamp(150px, 90vw, 600px);
+    max-height: 50vh;
+    overflow-y: auto;
     border-radius: 10px;
     border: solid 2px aliceblue;
     box-shadow: 1px 3px 20px 5px rgba(57, 53, 53, 0.5);
     text-align: center;
-    position: absolute;
-    top: 800px;
 }
 
 .dialog-container {
@@ -101,19 +100,6 @@ a {
     color: black
 }
 
-#check-box {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    background-color: white;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-}
-
-#title-holder {
-    display: flex;
-    align-items: center;
-}
 
 li {
     list-style: none;
@@ -126,7 +112,7 @@ li {
     margin-bottom: 5px;
 }
 
-.new-task {
+#new-task {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -134,7 +120,7 @@ li {
     justify-content: center;
 }
 
-.new-task > p{
+#new-task > p{
     width: 250px;
 }
 
@@ -146,7 +132,7 @@ li {
     padding-right: 5px;
 }
 
-.new-task > button {
+#new-task > button {
     background-color: rgb(232, 71, 71);
     color: white;
     border-radius: 5px;
@@ -157,6 +143,8 @@ li {
 form {
     display: flex;
     flex-direction: column;
+    align-content: start;
+    justify-content: start;
     gap: 5px;
 }
 
@@ -182,7 +170,7 @@ form {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 10px;
+    padding-top: 10px;
 }
 
 #options-container > div {
@@ -209,4 +197,20 @@ div:focus {
     background-color: purple;
     color: white;
 
+}
+
+#buttons-holder {
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+}
+
+.titleHolder {
+    display: flex;
+    gap: 2px;
+}
+
+.itemTitle, .itemDescription, .dueTime, .check-box {
+    margin: 0px;
 }

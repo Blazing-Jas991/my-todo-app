@@ -11,7 +11,7 @@
         <nav>
             <div class="header-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="25" width="25"><title>circle-outline</title><path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
-                <h3>Jasinski</h3>
+                <p>Jasinski</p>
             </div>
             <div class="icons">
                 <div>
@@ -41,7 +41,7 @@
             </div>
             <div>
                 <div>
-                    <h3 class="projects">My Projects</h3>
+                    <p class="projects">My Projects</p>
                 </div>
             </div>
         </nav>
@@ -51,47 +51,44 @@
             <div class="dialog-container">
                 <form action="post" id="task-form">
                     <input type="text" id="title-input" placeholder="Name Your Task" name="task-title">
-                    <input type="text" id="description-input" placeholder="Describe Your Task" name="task-descriptioin">
+                    <input type="text" id="description-input" placeholder="Describe Your Task" name="task-description">
+                
+                    <div id="options-container">
+                        <div class="options-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>calendar-range</title><path d="M9,10H7V12H9V10M13,10H11V12H13V10M17,10H15V12H17V10M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z" /></svg>
+                            <button type="button" id="date-button">Date</button>
+                        </div>
+                        <div class="options-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>paperclip</title><path d="M17,7V17.5C17,20.54 14.54,23 11.5,23C8.46,23 6,20.54 6,17.5V6C6,3.79 7.79,2 10,2C12.21,2 14,3.79 14,6V16.5C14,17.88 12.88,19 11.5,19C10.12,19 9,17.88 9,16.5V7H10V16.5C10,17.33 10.67,18 11.5,18C12.33,18 13,17.33 13,16.5V7.15L13,7V6C13,4.34 11.66,3 10,3C8.34,3 7,4.34 7,6V16.44L7,17.5C7,20 9,22 11.5,22C14,22 16,20 16,17.5V7H17Z" /></svg>
+                            <button type="button" id="attachment-button">Attachment</button>
+                        </div>
+                        <div class="options-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>flag</title><path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z" /></svg>
+                            <button type="button" id="priority-button">Priority</button>
+                        </div>
+                        <div class="options-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>alarm-note</title><path d="M17.4,1.86L16.11,3.39L20.71,7.25L22,5.72L17.4,1.86M6.6,1.86L2,5.71L3.29,7.24L7.88,3.39L6.6,1.86M12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C12.33,22 12.67,22 13,21.94V19.94C12.67,20 12.33,20 12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6C15.1,6 17.83,8.03 18.71,11H20.78C19.85,6.9 16.2,4 12,4M23,15H20V20.5A2.5,2.5 0 0,1 17.5,23A2.5,2.5 0 0,1 15,20.5A2.5,2.5 0 0,1 17.5,18C18.04,18 18.57,18.18 19,18.5V13H23V15M11.5,8V13.25L7.5,15.62L8.25,16.85L13,14V8H11.5Z" /></svg>
+                            <button type="button" id="reminder-button">Reminder</button>
+                        </div>
+                    </div>
+                    <div id="buttons-holder">
+                        <button type="reset" id="cancel-task">Cancel</button>
+                        <button type="submit" id="add-task">Add Task</button>
+                    </div>
                 </form>
-                <div class="options-container">
-                    <div class="options-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>calendar-range</title><path d="M9,10H7V12H9V10M13,10H11V12H13V10M17,10H15V12H17V10M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z" /></svg>
-                        <button class="date-button">Date</button>
-                    </div>
-                    <div class="options-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>paperclip</title><path d="M17,7V17.5C17,20.54 14.54,23 11.5,23C8.46,23 6,20.54 6,17.5V6C6,3.79 7.79,2 10,2C12.21,2 14,3.79 14,6V16.5C14,17.88 12.88,19 11.5,19C10.12,19 9,17.88 9,16.5V7H10V16.5C10,17.33 10.67,18 11.5,18C12.33,18 13,17.33 13,16.5V7.15L13,7V6C13,4.34 11.66,3 10,3C8.34,3 7,4.34 7,6V16.44L7,17.5C7,20 9,22 11.5,22C14,22 16,20 16,17.5V7H17Z" /></svg>
-                        <button>Attachment</button>
-                    </div>
-                    <div class="options-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>flag</title><path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z" /></svg>
-                        <button>Priority</button>
-                    </div>
-                    <div class="options-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>alarm-note</title><path d="M17.4,1.86L16.11,3.39L20.71,7.25L22,5.72L17.4,1.86M6.6,1.86L2,5.71L3.29,7.24L7.88,3.39L6.6,1.86M12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C12.33,22 12.67,22 13,21.94V19.94C12.67,20 12.33,20 12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6C15.1,6 17.83,8.03 18.71,11H20.78C19.85,6.9 16.2,4 12,4M23,15H20V20.5A2.5,2.5 0 0,1 17.5,23A2.5,2.5 0 0,1 15,20.5A2.5,2.5 0 0,1 17.5,18C18.04,18 18.57,18.18 19,18.5V13H23V15M11.5,8V13.25L7.5,15.62L8.25,16.85L13,14V8H11.5Z" /></svg>
-                        <button>Reminder</button>
-                    </div>
-                </div>
-                <div class="buttons-holder">
-                    <button id="cancel-task">Cancel</button>
-                    <button id="add-task">Add Task</button>
-                </div>
             </div>
         </dialog>
-        <div class="content-container"> 
+
+        <div id="content-container"> 
             <ul class="task-list"></ul>
         </div>
         
-        <div class="new-task">
-            <h4>Capture now, plan later</h4>
+        <div id="new-task">
+            <p>Capture now, plan later</p>
             <p>Here is your go-to spot for quick task entry. Clear your mind now, organize when you're ready.</p>
             <button class="add-task-button">+ Add Task</button>
 
         </div>
-        <div>
-
-        </div>
-        
-
     </main>
     <script type="module" src="./index.js"></script>
 </body>
