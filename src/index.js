@@ -18,4 +18,3 @@ secondTaskBtn.addEventListener('click', addTaskFromPageButton);
 
 const cancelButton = document.getElementById('cancel-task');
 cancelButton.addEventListener('click', cancelTask);
-

@@ -28,6 +28,8 @@ main {
     border: solid 2px aliceblue;
     box-shadow: 1px 3px 20px 5px rgba(57, 53, 53, 0.5);
     text-align: center;
+    position: absolute;
+    top: 800px;
 }
 
 .dialog-container {
@@ -117,7 +119,7 @@ li {
     list-style: none;
 }
 
-#separator {
+.separator {
     max-width: 566px;
     border: 1px solid grey;
     margin-top: 5px;
