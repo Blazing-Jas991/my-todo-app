@@ -4,6 +4,7 @@ import { displayList } from "./inbox.js";
 import { cancelTask } from "./inbox.js";
 import { addTaskFromPageButton } from "./inbox.js";
 import { addTaskSideBar } from "./inbox.js";
+import './date-picker.js';
 
 displayList();
 

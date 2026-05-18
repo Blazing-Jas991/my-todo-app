@@ -1,8 +1,11 @@
+import { getSelectedDate } from "./date-picker.js";
+import { format } from 'date-fns';
+
 const myTodoList = JSON.parse(localStorage.getItem("TodoList")) || [];
 const dialog = document.getElementById('dialog');
 
 const addTaskFromPage = document.querySelector('#new-task');
-const taskList = document.querySelector('.task-list');
+const taskList = document.querySelector('#task-list');
 
 const titleInput = document.querySelector('#title-input');
 const descriptionInput = document.querySelector('#description-input');
@@ -18,19 +21,18 @@ export function newTask() {
         title: title,
         description: description,
         section: 'inbox',
-        dueDate: 'monday',
+        dueDate: getSelectedDate(),
         priority: 'very Important',
         id: crypto.randomUUID()
     };
 
     myTodoList.push(todo);
-    localStorage.setItem("TodoList", JSON.stringify(myTodoList));
 
     form.reset();
     dialog.close();
 
     console.log(myTodoList);
-    displayList();
+    update();
 };
 
 export function displayList() { 
@@ -51,7 +53,7 @@ export function displayList() {
 
         const itemTitle = document.createElement('p');
         itemTitle.classList.add('itemTitle');
-        itemTitle.textContent = `${task.title}`;
+        itemTitle.textContent = task.title;
 
         const titleHolder = document.createElement('div');
         titleHolder.classList.add('titleHolder');
@@ -59,11 +61,12 @@ export function displayList() {
 
         const itemDescription = document.createElement('p');
         itemDescription.classList.add('itemDescription');
-        itemDescription.textContent = `${task.description}`;
+        itemDescription.textContent = task.description;
 
         const dueTime = document.createElement('p');
         dueTime.classList.add('dueTime');
-        dueTime.textContent = `${task.dueDate}`;
+        // dueTime.textContent = task.dueDate;
+        dueTime.textContent = task.dueDate ? format(new Date(task.dueDate), 'dd - MM - yyyy') : 'No date';
 
         const separator = document.createElement('div');
         separator.classList.add('separator');
@@ -82,11 +85,16 @@ export function displayList() {
     taskDisplay();
 };
 
+function update () {
+    localStorage.setItem("TodoList", JSON.stringify(myTodoList));
+    displayList();
+}
+
 // get the item's ID and deleted it from the Array and update the localStorage
 function deleteItem (id) {
     const index = myTodoList.findIndex(b => b.id === id);
     myTodoList.splice(index, 1);
-    localStorage.setItem("TodoList", JSON.stringify(myTodoList));
+    update();
 };
 
 // if task-list is empty display content from new-task, else display the content from the array

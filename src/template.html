@@ -40,14 +40,23 @@
                 </div>
             </div>
             <div>
-                <div>
-                    <p class="projects">My Projects</p>
-                </div>
+                <p class="projects">My Projects</p>
             </div>
         </nav>
     </aside>
     <main>
-        <dialog id="dialog">
+        <div id="content-container"> 
+            <ul id="task-list"></ul>
+        </div>
+        
+        <div id="new-task">
+            <p>Capture now, plan later</p>
+            <p>Here is your go-to spot for quick task entry. Clear your mind now, organize when you're ready.</p>
+            <button class="add-task-button">+ Add Task</button>
+
+        </div>
+    </main>
+    <dialog id="dialog">
             <div class="dialog-container">
                 <form action="post" id="task-form">
                     <input type="text" id="title-input" placeholder="Name Your Task" name="task-title">
@@ -78,18 +87,25 @@
                 </form>
             </div>
         </dialog>
+        <dialog id="date-dialog">
+            <header id="date-picker-header">
+                <button id="prev-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="25" width="25"><title>menu-left</title><path d="M14,7L9,12L14,17V7Z" /></svg></button>
+                <div id="month-displayer">Month / Year</div>
+                <button id="next-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="25" width="25"><title>menu-right</title><path d="M10,17L15,12L10,7V17Z"/></svg></button>
+            </header>
+            <section id="days-of-week">
+                <p>Mon</p>
+                <p>Tue</p>
+                <p>Wed</p>
+                <p>Thur</p>
+                <p>Fri</p>
+                <p>Sat</p>
+                <p>Sun</p>
+            </section>
+            <section id="days-container">
 
-        <div id="content-container"> 
-            <ul class="task-list"></ul>
-        </div>
-        
-        <div id="new-task">
-            <p>Capture now, plan later</p>
-            <p>Here is your go-to spot for quick task entry. Clear your mind now, organize when you're ready.</p>
-            <button class="add-task-button">+ Add Task</button>
-
-        </div>
-    </main>
+            </section>
+        </dialog>
     <script type="module" src="./index.js"></script>
 </body>
 </html>
