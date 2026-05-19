@@ -1,5 +1,6 @@
 import { getSelectedDate } from "./date-picker.js";
 import { format } from 'date-fns';
+import { dateBtn, dateBtnText } from "./date-picker.js";
 
 const myTodoList = JSON.parse(localStorage.getItem("TodoList")) || [];
 const dialog = document.getElementById('dialog');
@@ -108,18 +109,20 @@ function taskDisplay () {
 
 // cancel task, close the dialog and display what was initially on the screen
 export function cancelTask() {
+    taskDisplay();
     dialog.close();
-    addTaskFromPage.style.display = 'flex';
 };
 
 // open the dialog for newTask to be added
 export function addTaskFromPageButton() {
+    dateBtn.textContent = dateBtnText;
     addTaskFromPage.style.display = 'none';
     dialog.showModal();
 };
 
 // open the dialog for newTask to be added
 export function addTaskSideBar() {
+    dateBtn.textContent = dateBtnText;
     addTaskFromPage.style.display = 'none';
     dialog.showModal();
 };

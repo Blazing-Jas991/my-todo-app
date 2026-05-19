@@ -174,7 +174,7 @@ form {
 }
 
 #options-container > div {
-    border: 1px white solid;
+    border: 1px rgb(5, 4, 4) solid;
     padding: 5px;
 }
 
@@ -237,3 +237,20 @@ div:focus {
     color: black;
 }
 
+#date-dialog {
+
+    gap: 15px;
+}
+
+#time-picker-container {
+    margin-top: 15px;
+}
+
+#time-picker {
+    border: 1px solid grey;
+    height: 30px;
+    width: 50px;
+    padding: 2px;
+    margin: 5px 5px 5px 0;
+    text-align: center;
+}

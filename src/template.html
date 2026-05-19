@@ -57,7 +57,7 @@
         </div>
     </main>
     <dialog id="dialog">
-            <div class="dialog-container">
+            <div id="dialog-container">
                 <form action="post" id="task-form">
                     <input type="text" id="title-input" placeholder="Name Your Task" name="task-title">
                     <input type="text" id="description-input" placeholder="Describe Your Task" name="task-description">
@@ -104,6 +104,11 @@
             </section>
             <section id="days-container">
 
+            </section>
+            <section id="time-picker-container">
+                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>menu-up</title><path d="M7,15L12,10L17,15H7Z" /></svg></button>
+                <div id="time-picker"></div>
+                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>menu-down</title><path d="M7,10L12,15L17,10H7Z" /></svg></button>
             </section>
         </dialog>
     <script type="module" src="./index.js"></script>

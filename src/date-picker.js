@@ -22,8 +22,9 @@ const dateHeader = document.getElementById('month-displayer');
 const weekDaysContainer = document.getElementById('days-container');
 const prevBtn = document.getElementById('prev-arrow');
 const nextBtn = document.getElementById('next-arrow');
-const dateBtn = document.getElementById('date-button');
+export const dateBtn = document.getElementById('date-button');
 const dateDialog = document.getElementById('date-dialog');
+export const dateBtnText = dateBtn.textContent;
 
 function renderCalendar () {
     weekDaysContainer.replaceChildren();
@@ -34,7 +35,7 @@ function renderCalendar () {
     let startingDay = (getDay(firstDay) + 6) % 7;
 
     for (let i = 0; i < startingDay; i++) {
-        let i = document.createElement('div');
+        i = document.createElement('div');
         weekDaysContainer.append(i);
     }
 
@@ -53,14 +54,15 @@ function renderCalendar () {
             if (selectedButton) {
                 selectedButton.classList.remove('selected');
             }
+
+            dateBtn.textContent = format(days, 'dd - MMM - yyyy');
+
             dayButton.classList.add('selected');
             selectedButton = dayButton;
             selectedDate = days;
             dateDialog.close();
-            console.log(days);
-            console.log(selectedButton);
-        })
-    }
+        });
+    };
 };
 
 function previousMonth () {
