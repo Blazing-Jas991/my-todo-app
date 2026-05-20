@@ -1,12 +1,33 @@
 import "./styles.css";
-import { newTask } from "./inbox.js";
-import { displayList } from "./inbox.js";
-import { cancelTask } from "./inbox.js";
-import { addTaskFromPageButton } from "./inbox.js";
-import { addTaskSideBar } from "./inbox.js";
+import { newTask,
+displayList,
+cancelTask, 
+addTaskFromPageButton, 
+addTaskSideBar, 
+myTodoList, 
+todayTab, 
+inboxTab, 
+upcomingTab } 
+from "./inbox.js";
+
 import './date-picker.js';
 
-displayList();
+inboxTab();
+
+const inboxSection = document.getElementById('inbox-btn');
+inboxSection.addEventListener('click', () => { 
+    inboxTab();
+});
+
+const todaySection = document.getElementById('today-btn');
+todaySection.addEventListener('click', () => { 
+    todayTab();
+});
+
+const upcomingSection = document.getElementById('upcoming-btn');
+upcomingSection.addEventListener('click', () => {
+    upcomingTab();
+});
 
 const addTask = document.querySelector("#task-form");
 addTask.addEventListener('submit', (e) => {

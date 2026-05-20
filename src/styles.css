@@ -3,10 +3,11 @@ body {
     display: grid;
     grid-template-columns: 200px 1fr;
     margin: 0 auto;
+    height: 100vh;
 }
 
 aside {
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(202, 202, 202);
     padding-left: 15px;
 }
@@ -109,7 +110,7 @@ li {
     max-width: 566px;
     border: 1px solid grey;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 #new-task {
@@ -253,4 +254,8 @@ div:focus {
     padding: 2px;
     margin: 5px 5px 5px 0;
     text-align: center;
+}
+
+#state-display-text {
+    margin-left: 37px;
 }

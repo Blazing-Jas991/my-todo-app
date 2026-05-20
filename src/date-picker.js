@@ -35,8 +35,8 @@ function renderCalendar () {
     let startingDay = (getDay(firstDay) + 6) % 7;
 
     for (let i = 0; i < startingDay; i++) {
-        i = document.createElement('div');
-        weekDaysContainer.append(i);
+        const emptySpace = document.createElement('div');
+        weekDaysContainer.append(emptySpace);
     }
 
     dateHeader.textContent = format(currentMonth, 'MMMM yyyy');
@@ -87,16 +87,14 @@ prevBtn.addEventListener('click', (e) => {
 
 dateBtn.addEventListener('click', (e) => {
     e.preventDefault();
+    currentMonth = new Date();
+    renderCalendar();
     dateDialog.showModal();
 });
 
 export function getSelectedDate () {
     return selectedDate;
 };
-
-
-
-
 
 
 

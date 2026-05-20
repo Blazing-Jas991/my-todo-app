@@ -1,9 +1,13 @@
 import { getSelectedDate } from "./date-picker.js";
-import { format } from 'date-fns';
+import { format, isAfter, isSameDay } from 'date-fns';
 import { dateBtn, dateBtnText } from "./date-picker.js";
 
-const myTodoList = JSON.parse(localStorage.getItem("TodoList")) || [];
+
+export const myTodoList = JSON.parse(localStorage.getItem("TodoList")) || [];
+
+export let currentView = 'inbox';
 const dialog = document.getElementById('dialog');
+const contentContainer = document.getElementById('content-container');
 
 const addTaskFromPage = document.querySelector('#new-task');
 const taskList = document.querySelector('#task-list');
@@ -12,6 +16,8 @@ const titleInput = document.querySelector('#title-input');
 const descriptionInput = document.querySelector('#description-input');
 
 const form = document.getElementById('task-form');
+const stateDisplayText = document.getElementById('state-display-text');
+stateDisplayText.textContent = 'Inbox';
 
 // create a new todo object with the provided values from the input fields and display it
 export function newTask() {
@@ -36,11 +42,12 @@ export function newTask() {
     update();
 };
 
-export function displayList() { 
+export function displayList(listing) { 
     taskList.replaceChildren(); //clear the list
     
 // Create a list for every item in the array and set the values from the input field and add it to the UL
-    for(const task of myTodoList) {
+    for(const task of listing) {
+
 
         const itemList = document.createElement('li'); // create a list for title
         itemList.dataset.id = task.id; // assign the id of the task to title 
@@ -74,7 +81,7 @@ export function displayList() {
 
         itemList.append(titleHolder, itemDescription, dueTime, separator);
         taskList.append(itemList);
-
+        
 /// when checkBox is clicked, delete Item and all it's attribute
         checkBox.addEventListener('click', () => { 
             deleteItem(task.id);
@@ -85,11 +92,41 @@ export function displayList() {
     };
     taskDisplay();
 };
+    
+
+export function todayTab () {
+    const todayList = myTodoList.filter((task) => isSameDay(task.dueDate, new Date()));
+    currentView = 'today';
+    stateDisplayText.textContent = 'Today';
+    displayList(todayList);
+};
+
+export function inboxTab () {
+    currentView = 'inbox';
+    stateDisplayText.textContent = 'Inbox';
+    displayList(myTodoList);
+};
+
+export function upcomingTab () {
+    const upcoming = myTodoList.filter((task) => isAfter(task.dueDate, new Date()));
+    currentView = 'upcoming';
+    stateDisplayText.textContent = 'Upcoming';
+    displayList(upcoming);
+
+}
 
 function update () {
     localStorage.setItem("TodoList", JSON.stringify(myTodoList));
-    displayList();
-}
+
+    if (currentView === 'inbox') {
+        displayList(myTodoList);
+    } else if (currentView === 'today') {
+        todayTab();
+    } else {
+        upcomingTab();
+    };
+
+};
 
 // get the item's ID and deleted it from the Array and update the localStorage
 function deleteItem (id) {
@@ -126,3 +163,5 @@ export function addTaskSideBar() {
     addTaskFromPage.style.display = 'none';
     dialog.showModal();
 };
+
+
