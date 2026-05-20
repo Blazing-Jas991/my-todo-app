@@ -55,7 +55,7 @@ function renderCalendar () {
                 selectedButton.classList.remove('selected');
             }
 
-            dateBtn.textContent = format(days, 'dd - MMM - yyyy');
+            dateBtn.textContent = format(days, 'eee, MMM dd, yyyy');
 
             dayButton.classList.add('selected');
             selectedButton = dayButton;

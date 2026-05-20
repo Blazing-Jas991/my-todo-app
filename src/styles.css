@@ -57,8 +57,13 @@ main {
 .options-container {
     display: flex;
     gap: 35px;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+}
+
+#content-container {
+    width: clamp(70%, 90vw, 1000px);
+    margin: 0 auto;
 }
 
 #cancel-task {
@@ -108,9 +113,9 @@ li {
 
 .separator {
     max-width: 566px;
-    border: 1px solid grey;
+    border: 1px solid rgb(220, 205, 205, 0.5);
     margin-top: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 
 #new-task {
@@ -216,6 +221,20 @@ div:focus {
     margin: 0px;
 }
 
+.itemDescription, .dueTime {
+    padding-left: 25px;
+    padding-bottom: 5px;
+}
+
+.itemTitle {
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+.check-box {
+    margin-bottom: 7px;
+}
+
 #date-picker-header {
     display: flex;
     justify-content: space-between;
@@ -258,4 +277,13 @@ div:focus {
 
 #state-display-text {
     margin-left: 37px;
+}
+
+.upcoming-header {
+    border-bottom: rgb(154, 141, 141, 0.5) 1px solid;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    max-width: 566px;
+    
 }

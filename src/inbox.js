@@ -74,7 +74,7 @@ export function displayList(listing) {
         const dueTime = document.createElement('p');
         dueTime.classList.add('dueTime');
         // dueTime.textContent = task.dueDate;
-        dueTime.textContent = task.dueDate ? format(new Date(task.dueDate), 'dd - MM - yyyy') : 'No date';
+        dueTime.textContent = task.dueDate ? format(new Date(task.dueDate), 'eee, MMM dd, yyyy') : 'No date';
 
         const separator = document.createElement('div');
         separator.classList.add('separator');
@@ -108,12 +108,76 @@ export function inboxTab () {
 };
 
 export function upcomingTab () {
+    taskList.replaceChildren();
     const upcoming = myTodoList.filter((task) => isAfter(task.dueDate, new Date()));
     currentView = 'upcoming';
     stateDisplayText.textContent = 'Upcoming';
-    displayList(upcoming);
 
-}
+    const group = {};
+
+    for (const task of upcoming) {
+        const date = format(task.dueDate, 'eee, MMM dd, yyyy');
+        if (!group[date]) {
+            group[date] = [];
+        }
+        group[date].push(task);
+    }
+
+    for (const [date, tasks] of Object.entries(group)) {
+        const header = document.createElement('p');
+        header.classList.add('upcoming-header')
+        header.textContent = date;
+        taskList.append(header);
+
+        for (const task of tasks) {
+            const itemList = document.createElement('li'); // create a list for title
+            itemList.dataset.id = task.id; // assign the id of the task to title 
+            itemList.classList.add('itemList');
+
+            const checkBox = Object.assign(document.createElement('input'), {
+                type: 'checkbox',
+                className: 'check-box',
+                name: 'check-box'
+            });
+
+            const itemTitle = document.createElement('p');
+            itemTitle.classList.add('itemTitle');
+            itemTitle.textContent = task.title;
+
+            const titleHolder = document.createElement('div');
+            titleHolder.classList.add('titleHolder');
+            titleHolder.append(checkBox, itemTitle);
+
+            const itemDescription = document.createElement('p');
+            itemDescription.classList.add('itemDescription');
+            itemDescription.textContent = task.description;
+
+            const dueTime = document.createElement('p');
+            dueTime.classList.add('dueTime');
+            dueTime.textContent = task.dueDate ? format(new Date(task.dueDate), 'eee, MMM dd, yyyy') : 'No date';
+
+            const separator = document.createElement('div');
+            separator.classList.add('separator');
+
+            itemList.append(titleHolder, itemDescription, dueTime, separator);
+            taskList.append(itemList);
+            
+    /// when checkBox is clicked, delete Item and all it's attribute
+            checkBox.addEventListener('click', () => { 
+                deleteItem(task.id);
+                itemList.remove();
+                checkBox.remove();
+                taskDisplay();
+            });
+        };
+    };
+    taskDisplay();
+    
+
+    // displayList(upcoming);
+    console.log(Object.entries(group));
+    console.log(group);
+};
 
 function update () {
     localStorage.setItem("TodoList", JSON.stringify(myTodoList));
