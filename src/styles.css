@@ -266,10 +266,23 @@ div:focus {
     margin-top: 15px;
 }
 
+#time-picker-container > button {
+    width: 45px;
+}
+
 #time-picker {
+    display: flex;
+    gap: 2px;
+}
+
+.time-arr-btn {
+    margin-left: 10px;
+}
+
+#hour-picker, #minute-picker {
     border: 1px solid grey;
     height: 30px;
-    width: 50px;
+    width: 40px;
     padding: 2px;
     margin: 5px 5px 5px 0;
     text-align: center;

@@ -106,9 +106,11 @@
 
             </section>
             <section id="time-picker-container">
-                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>menu-up</title><path d="M7,15L12,10L17,15H7Z" /></svg></button>
-                <div id="time-picker"></div>
-                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>menu-down</title><path d="M7,10L12,15L17,10H7Z" /></svg></button>
+                <button id="increase-hour"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>menu-up</title><path d="M7,15L12,10L17,15H7Z" /></svg></button><button id="increase-minute"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>menu-up</title><path d="M7,15L12,10L17,15H7Z" /></svg></button>
+                <div id="time-picker">
+                    <div id="hour-picker"></div><div id="minute-picker"></div>
+                </div>
+                <button id="decrease-hour"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>menu-down</title><path d="M7,10L12,15L17,10H7Z" /></svg></button><button id="decrease-minute"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20"><title>menu-down</title><path d="M7,10L12,15L17,10H7Z" /></svg></button>
             </section>
         </dialog>
     <script type="module" src="./index.js"></script>

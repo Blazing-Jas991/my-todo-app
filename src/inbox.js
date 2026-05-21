@@ -109,7 +109,7 @@ export function inboxTab () {
 
 export function upcomingTab () {
     taskList.replaceChildren();
-    const upcoming = myTodoList.filter((task) => isAfter(task.dueDate, new Date()));
+    const upcoming = myTodoList.sort((a, b) => a.dueDate - b.dueDate).filter((task) => isAfter(task.dueDate, new Date()));
     currentView = 'upcoming';
     stateDisplayText.textContent = 'Upcoming';
 

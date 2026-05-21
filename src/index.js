@@ -9,8 +9,8 @@ todayTab,
 inboxTab, 
 upcomingTab } 
 from "./inbox.js";
-
 import './date-picker.js';
+import { hourDownController, hourUpController } from "./date-picker.js";
 
 inboxTab();
 
@@ -33,6 +33,16 @@ const addTask = document.querySelector("#task-form");
 addTask.addEventListener('submit', (e) => {
     e.preventDefault();
     newTask();
+});
+
+const decreaseHour = document.getElementById('decrease-hour');
+decreaseHour.addEventListener('click', () => {
+    hourDownController();
+});
+
+const increaseHour = document.getElementById('increase-hour');
+increaseHour.addEventListener('click', () => {
+    hourUpController();
 });
 
 const addButton = document.querySelector('#add-btn');

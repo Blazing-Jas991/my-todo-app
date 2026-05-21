@@ -18,6 +18,14 @@ let currentMonth = new Date();
 let selectedDate = null;
 let selectedButton = null;
 
+let hours = 0;
+let minutes = 0;
+
+const minutePicker = document.getElementById('minute-picker');
+minutePicker.textContent = minutes;
+const hourPicker = document.getElementById('hour-picker');
+hourPicker.textContent = hours;
+
 const dateHeader = document.getElementById('month-displayer');
 const weekDaysContainer = document.getElementById('days-container');
 const prevBtn = document.getElementById('prev-arrow');
@@ -64,6 +72,39 @@ function renderCalendar () {
         });
     };
 };
+
+export function hourUpController () {
+    if(hours < 23) {
+        hours++;
+    } else {
+        hours = 0;
+    };
+}
+
+export function hourDownController () {
+    if(hours < 23) {
+        hours--;
+    } else {
+        hours = 0;
+    };
+}
+
+export function minuteUpController () {
+    if (minutes < 59) {
+        minutes++;
+    } else {
+        minutes = 0;
+    }
+}
+
+export function minuteDownController () {
+    if (minutes < 59) {
+        minutes--;
+    } else {
+        minutes = 0;
+    }
+}
+
 
 function previousMonth () {
     currentMonth = subMonths(currentMonth, 1);
