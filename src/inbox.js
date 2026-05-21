@@ -19,16 +19,20 @@ const form = document.getElementById('task-form');
 const stateDisplayText = document.getElementById('state-display-text');
 stateDisplayText.textContent = 'Inbox';
 
+const timePicker = document.getElementById('time-picker');
+
 // create a new todo object with the provided values from the input fields and display it
 export function newTask() {
     const title = titleInput.value;
     const description = descriptionInput.value;
+    const time = timePicker.value;
     
     const todo = {
         title: title,
         description: description,
         section: 'inbox',
         dueDate: getSelectedDate(),
+        time: time,
         priority: 'very Important',
         id: crypto.randomUUID()
     };
@@ -74,7 +78,11 @@ export function displayList(listing) {
         const dueTime = document.createElement('p');
         dueTime.classList.add('dueTime');
         // dueTime.textContent = task.dueDate;
-        dueTime.textContent = task.dueDate ? format(new Date(task.dueDate), 'eee, MMM dd, yyyy') : 'No date';
+        if (task.time === undefined) {
+            dueTime.textContent = task.dueDate ? format(new Date(task.dueDate), 'eee, MMM dd, yyyy') : 'No date';
+        }else {
+            dueTime.textContent = task.dueDate ? `${format(new Date(task.dueDate), 'eee, MMM dd, yyyy')} ${task.time}` : 'No date';
+        };
 
         const separator = document.createElement('div');
         separator.classList.add('separator');

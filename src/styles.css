@@ -171,7 +171,6 @@ form {
     font-weight: bold;
 }
 
-
 #options-container {
     display: flex;
     justify-content: center;
@@ -258,34 +257,15 @@ div:focus {
 }
 
 #date-dialog {
-
     gap: 15px;
+}
+
+#date-dialog > section > p {
+    font-weight: bold;
 }
 
 #time-picker-container {
     margin-top: 15px;
-}
-
-#time-picker-container > button {
-    width: 45px;
-}
-
-#time-picker {
-    display: flex;
-    gap: 2px;
-}
-
-.time-arr-btn {
-    margin-left: 10px;
-}
-
-#hour-picker, #minute-picker {
-    border: 1px solid grey;
-    height: 30px;
-    width: 40px;
-    padding: 2px;
-    margin: 5px 5px 5px 0;
-    text-align: center;
 }
 
 #state-display-text {

@@ -18,21 +18,16 @@ let currentMonth = new Date();
 let selectedDate = null;
 let selectedButton = null;
 
-let hours = 0;
-let minutes = 0;
-
-const minutePicker = document.getElementById('minute-picker');
-minutePicker.textContent = minutes;
-const hourPicker = document.getElementById('hour-picker');
-hourPicker.textContent = hours;
-
 const dateHeader = document.getElementById('month-displayer');
 const weekDaysContainer = document.getElementById('days-container');
 const prevBtn = document.getElementById('prev-arrow');
 const nextBtn = document.getElementById('next-arrow');
+
 export const dateBtn = document.getElementById('date-button');
 const dateDialog = document.getElementById('date-dialog');
 export const dateBtnText = dateBtn.textContent;
+const timePicker = document.getElementById('time-picker');
+let selectedTime = timePicker.value;
 
 function renderCalendar () {
     weekDaysContainer.replaceChildren();
@@ -63,7 +58,7 @@ function renderCalendar () {
                 selectedButton.classList.remove('selected');
             }
 
-            dateBtn.textContent = format(days, 'eee, MMM dd, yyyy');
+            dateBtn.textContent = `${format(days, 'eee, MMM dd, yyyy')} ${selectedTime}` ;
 
             dayButton.classList.add('selected');
             selectedButton = dayButton;
@@ -72,39 +67,6 @@ function renderCalendar () {
         });
     };
 };
-
-export function hourUpController () {
-    if(hours < 23) {
-        hours++;
-    } else {
-        hours = 0;
-    };
-}
-
-export function hourDownController () {
-    if(hours < 23) {
-        hours--;
-    } else {
-        hours = 0;
-    };
-}
-
-export function minuteUpController () {
-    if (minutes < 59) {
-        minutes++;
-    } else {
-        minutes = 0;
-    }
-}
-
-export function minuteDownController () {
-    if (minutes < 59) {
-        minutes--;
-    } else {
-        minutes = 0;
-    }
-}
-
 
 function previousMonth () {
     currentMonth = subMonths(currentMonth, 1);
@@ -136,6 +98,7 @@ dateBtn.addEventListener('click', (e) => {
 export function getSelectedDate () {
     return selectedDate;
 };
+
 
 
 
