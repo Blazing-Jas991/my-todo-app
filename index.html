@@ -184,29 +184,27 @@
 		</main>
 
 		<dialog id="new-task-dialog" class="dialog">
-			<div id="dialog-container">
+			<div class="dialog-container">
 				<form id="task-form" method="post">
-					<input
+					<textarea
 						id="new-task-title-input"
-						type="text"
 						class="title-input"
 						name="task-title"
 						placeholder="Name Your Task"
-					>
-					<input
+						rows="1"
+					></textarea>
+					<textarea
 						id="new-task-description-input"
-						type="text"
 						class="description-input"
 						name="task-description"
 						placeholder="Describe Your Task"
-					>
+						rows="1"
+					></textarea>
 
 					<div id="new-task-options-container" class="options-container">
 						<div class="options-icon">
 							<svg
-								height="20"
 								viewBox="0 0 24 24"
-								width="20"
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>calendar-range</title>
@@ -224,9 +222,7 @@
 						</div>
 						<div class="options-icon">
 							<svg
-								height="20"
 								viewBox="0 0 24 24"
-								width="20"
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>paperclip</title>
@@ -243,9 +239,7 @@
 						<div class="options-icon">
 							<svg
 								id="priority-svg"
-								height="20"
 								viewBox="0 0 24 24"
-								width="20"
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>flag</title>
@@ -261,9 +255,7 @@
 						</div>
 						<div class="options-icon">
 							<svg
-								height="20"
 								viewBox="0 0 24 24"
-								width="20"
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>alarm-note</title>
@@ -293,29 +285,29 @@
 		</dialog>
 
 		<dialog id="edit-task-dialog" class="dialog">
-			<div id="edit-dialog-container">
+			<div class="dialog-container">
 				<form id="edit-form" method="post">
-					<input
+					<textarea
 						id="edit-title-input"
-						type="text"
 						class="title-input"
 						name="task-title"
 						placeholder="Name Your Task"
-					>
-					<input
+						rows="1"
+					></textarea>
+					<textarea
 						id="edit-description-input"
-						type="text"
 						class="description-input"
 						name="task-description"
 						placeholder="Describe Your Task"
-					>
+						rows="1"
+					></textarea>
 
 					<div id="edit-options-container" class="options-container">
 						<div class="options-icon">
 							<svg
-								height="20"
+								
 								viewBox="0 0 24 24"
-								width="20"
+								
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>calendar-range</title>
@@ -333,9 +325,9 @@
 						</div>
 						<div class="options-icon">
 							<svg
-								height="20"
+								
 								viewBox="0 0 24 24"
-								width="20"
+								
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>paperclip</title>
@@ -354,9 +346,9 @@
 						<div class="options-icon">
 							<svg
 								id="edit-priority-svg"
-								height="20"
+								
 								viewBox="0 0 24 24"
-								width="20"
+								
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>flag</title>
@@ -372,9 +364,7 @@
 						</div>
 						<div class="options-icon">
 							<svg
-								height="20"
 								viewBox="0 0 24 24"
-								width="20"
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>alarm-note</title>
@@ -453,28 +443,52 @@
 		<dialog id="priority-dialog">
 			<div id="priority-options">
 				<div id="priority-one" class="priority-icon">
-					<svg id="first-priority-icon" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+					<svg
+						id="first-priority-icon"
+						height="20"
+						viewBox="0 0 24 24"
+						width="20"
+						xmlns="http://www.w3.org/2000/svg"
+					>
 						<title>flag</title>
 						<path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z"/>
 					</svg>
 					<button type="button">Priority 1</button>
 				</div>
 				<div id="priority-two" class="priority-icon">
-					<svg id="second-priority-icon" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+					<svg
+						id="second-priority-icon"
+						height="20"
+						viewBox="0 0 24 24"
+						width="20"
+						xmlns="http://www.w3.org/2000/svg"
+					>
 						<title>flag</title>
 						<path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z"/>
 					</svg>
 					<button type="button">Priority 2</button>
 				</div>
 				<div id="priority-three" class="priority-icon">
-					<svg id="third-priority-icon" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+					<svg
+						id="third-priority-icon"
+						height="20"
+						viewBox="0 0 24 24"
+						width="20"
+						xmlns="http://www.w3.org/2000/svg"
+					>
 						<title>flag</title>
 						<path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z"/>
 					</svg>
 					<button type="button">Priority 3</button>
 				</div>
 				<div id="priority-four" class="priority-icon">
-					<svg id="fourth-priority-icon" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+					<svg
+						id="fourth-priority-icon"
+						height="20"
+						viewBox="0 0 24 24"
+						width="20"
+						xmlns="http://www.w3.org/2000/svg"
+					>
 						<title>flag</title>
 						<path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z"/>
 					</svg>
