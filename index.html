@@ -7,14 +7,12 @@
 		<link href="styles.css" rel="stylesheet">
 		<meta content="A simple todo app" name="description">
 	<script defer src="main.js"></script></head>
-	<body id="body">
+	<body class="body">
 		<aside>
-			<nav id="nav-section">
+			<nav class="nav-section">
 				<div class="header-icon">
 					<svg
-						height="25"
 						viewBox="0 0 24 24"
-						width="25"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<title>circle-outline</title>
@@ -24,12 +22,10 @@
 					</svg>
 					<p>TODO APP</p>
 				</div>
-				<div id="icons" class="nav-item">
-					<div id="add-tab" class="nav-item">
+				<div class="icons nav-item">
+					<div class="add-tab nav-item">
 						<svg
-							height="25"
 							viewBox="0 0 24 24"
-							width="25"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<title>plus-circle</title>
@@ -38,18 +34,15 @@
 							/>
 						</svg>
 						<button
-							id="add-btn"
 							type="submit"
-							class="icon-button"
+							class="add-btn icon-button"
 						>
 							Add Task
 						</button>
 					</div>
-					<div id="search-tab" class="nav-item">
+					<div class="search-tab nav-item">
 						<svg
-							height="25"
 							viewBox="0 0 24 24"
-							width="25"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<title>magnify</title>
@@ -58,23 +51,18 @@
 							/>
 						</svg>
 						<button
-							id="search-btn"
 							type="submit"
-							class="icon-button"
-						>
+							class="search-btn icon-button">
 							Search
 						</button>
 					</div>
 					<div
-						id="inbox-tab"
-						class="nav-item"
+						class="inbox-tab nav-item"
 						autofocus
 						tabindex="0"
 					>
 						<svg
-							height="25"
 							viewBox="0 0 24 24"
-							width="25"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<title>inbox-arrow-down</title>
@@ -83,18 +71,15 @@
 							/>
 						</svg>
 						<button
-							id="inbox-btn"
 							type="submit"
-							class="icon-button"
+							class="inbox-btn icon-button"
 						>
 							Inbox
 						</button>
 					</div>
-					<div id="today-tab" class="nav-item">
+					<div class="today-tab nav-item">
 						<svg
-							height="25"
 							viewBox="0 0 24 24"
-							width="25"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<title>calendar-blank</title>
@@ -103,45 +88,38 @@
 							/>
 						</svg>
 						<button
-							id="today-btn"
 							type="submit"
-							class="icon-button"
+							class="today-btn icon-button"
 						>
 							Today
 						</button>
 					</div>
-					<div id="upcoming-tab" class="nav-item">
+					<div class="upcoming-tab nav-item">
 						<svg
-							height="25"
 							viewBox="0 0 24 24"
-							width="25"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<title>calendar-month</title>
 							<path d="M9,10V12H7V10H9M13,10V12H11V10H13M17,10V12H15V10H17M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H6V1H8V3H16V1H18V3H19M19,19V8H5V19H19M9,14V16H7V14H9M13,14V16H11V14H13M17,14V16H15V14H17Z"/>
 						</svg>
 						<button
-							id="upcoming-btn"
 							type="submit"
-							class="icon-button"
+							class="upcoming-btn icon-button"
 						>
 							Upcoming
 						</button>
 					</div>
-					<div id="reporting-tab" class="nav-item">
+					<div class="reporting-tab nav-item">
 						<svg
-							height="25"
 							viewBox="0 0 24 24"
-							width="25"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<title>chart-areaspline</title>
 							<path d="M17.45,15.18L22,7.31V19L22,21H2V3H4V15.54L9.5,6L16,9.78L20.24,2.45L21.97,3.45L16.74,12.5L10.23,8.75L4.31,19H6.57L10.96,11.44L17.45,15.18Z"/>
 						</svg>
 						<button
-							id="reporting-btn"
 							type="submit"
-							class="icon-button"
+							class="reporting-btn icon-button"
 						>
 							Reporting
 						</button>
@@ -154,14 +132,12 @@
 		</aside>
 
 		<main>
-			<div id="content-container">
-				<p id="state-display-text" aria-label="task content"></p>
-				<ul id="task-list"></ul>
-				<div id="additional-task">
+			<div class="content-container">
+				<p class="state-display-text" aria-label="task content"></p>
+				<ul class="task-list"></ul>
+				<div class="additional-task">
 					<svg
-						height="20"
 						viewBox="0 0 24 24"
-						width="20"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<title>plus-circle</title>
@@ -169,11 +145,11 @@
 							d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
 						/>
 					</svg>
-					<button id="additional-task-button" type="submit">Add Task</button>
+					<button type="submit" class="additional-task-button">Add Task</button>
 				</div>
 			</div>
 
-			<div id="new-task">
+			<div class="new-task">
 				<p>Capture now, plan later</p>
 				<p>
 					Here is your go-to spot for quick task entry. Clear your mind now,
@@ -183,25 +159,25 @@
 			</div>
 		</main>
 
-		<dialog id="new-task-dialog" class="dialog">
+		<dialog class="new-task-dialog dialog">
 			<div class="dialog-container">
-				<form id="task-form" method="post">
+				<form class="task-form" method="post">
 					<textarea
-						id="new-task-title-input"
-						class="title-input"
+						class="new-task-title-input title-input"
+						aria-label="Task Title"
 						name="task-title"
 						placeholder="Name Your Task"
 						rows="1"
 					></textarea>
 					<textarea
-						id="new-task-description-input"
-						class="description-input"
+						class="new-task-description-input description-input"
+						aria-label="Task Description"
 						name="task-description"
 						placeholder="Describe Your Task"
 						rows="1"
 					></textarea>
 
-					<div id="new-task-options-container" class="options-container">
+					<div class="new-task-options-container options-container">
 						<div class="options-icon date-button-container"">
 							<svg
 								viewBox="0 0 24 24"
@@ -213,9 +189,8 @@
 								/>
 							</svg>
 							<button
-								id="new-task-date-button"
 								type="button"
-								class="date-button"
+								class="new-task-date-button date-button"
 							>
 								Date
 							</button>
@@ -231,14 +206,13 @@
 								/>
 							</svg>
 							<button
-								id="new-task-attachment-button"
 								type="button"
-								class="attachment-button"
+								class="new-task-attachment-button attachment-button"
 							>Attachment</button>
 						</div>
 						<div class="options-icon priority-button-container">
 							<svg
-								id="priority-svg"
+								class="priority-svg"
 								viewBox="0 0 24 24"
 								xmlns="http://www.w3.org/2000/svg"
 							>
@@ -246,9 +220,8 @@
 								<path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z"/>
 							</svg>
 							<button
-								id="new-task-priority-button"
 								type="button"
-								class="priority-button"
+								class="new-task-priority-button priority-button"
 							>
 								Priority
 							</button>
@@ -264,18 +237,16 @@
 								/>
 							</svg>
 							<button
-								id="new-task-reminder-button"
 								type="button"
-								class="reminder-button"
+								class="new-task-reminder-button reminder-button"
 							>Reminder</button>
 						</div>
 					</div>
-					<div id="buttons-holder">
-						<button id="cancel-task" type="reset">Cancel</button>
+					<div class="buttons-holder">
+						<button type="reset" class="cancel-task">Cancel</button>
 						<button
-							id="add-task"
 							type="submit"
-							class="submit-button"
+							class="add-task submit-button"
 						>
 							Add Task
 						</button>
@@ -284,30 +255,28 @@
 			</div>
 		</dialog>
 
-		<dialog id="edit-task-dialog" class="dialog">
+		<dialog class="edit-task-dialog dialog">
 			<div class="dialog-container">
-				<form id="edit-form" method="post">
+				<form class="edit-form" method="post">
 					<textarea
-						id="edit-title-input"
-						class="title-input"
+						class="edit-title-input title-input"
+						aria-label="Task Title"
 						name="task-title"
 						placeholder="Name Your Task"
 						rows="1"
 					></textarea>
 					<textarea
-						id="edit-description-input"
-						class="description-input"
+						class="edit-description-input description-input"
+						aria-label="Task Description"
 						name="task-description"
 						placeholder="Describe Your Task"
 						rows="1"
 					></textarea>
 
-					<div id="edit-options-container" class="options-container">
+					<div class="edit-options-container options-container">
 						<div class="options-icon date-button-container">
 							<svg
-								
 								viewBox="0 0 24 24"
-								
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>calendar-range</title>
@@ -316,18 +285,15 @@
 								/>
 							</svg>
 							<button
-								id="edit-date-button"
 								type="button"
-								class="date-button"
+								class="edit-date-button date-button"
 							>
 								Date
 							</button>
 						</div>
 						<div class="options-icon">
 							<svg
-								
 								viewBox="0 0 24 24"
-								
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>paperclip</title>
@@ -336,28 +302,24 @@
 								/>
 							</svg>
 							<button
-								id="edit-attachment-button"
 								type="button"
-								class="attachment-button"
+								class="edit-attachment-button attachment-button"
 							>
 								Attachment
 							</button>
 						</div>
 						<div class="options-icon priority-button-container">
 							<svg
-								id="edit-priority-svg"
-								
+								class="edit-priority-svg"
 								viewBox="0 0 24 24"
-								
 								xmlns="http://www.w3.org/2000/svg"
 							>
 								<title>flag</title>
 								<path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z"/>
 							</svg>
 							<button
-								id="edit-priority-button"
 								type="button"
-								class="priority-button"
+								class="edit-priority-button priority-button"
 							>
 								Priority
 							</button>
@@ -373,18 +335,15 @@
 								/>
 							</svg>
 							<button
-								id="edit-reminder-button"
-								type="submit"
-								class="reminder-button type="
-								button"
+								type="button"
+								class="edit-reminder-button reminder-button"
 							>Reminder</button>
 						</div>
 					</div>
-					<div id="edit-buttons-holder">
+					<div class="edit-buttons-holder">
 						<button
-							id="edit-save-task"
 							type="submit"
-							class="submit-button"
+							class="edit-save-task submit-button"
 						>
 							Save
 						</button>
@@ -393,34 +352,34 @@
 			</div>
 		</dialog>
 
-		<dialog id="date-dialog">
-			<section id="time-picker-container">
+		<dialog class="date-dialog">
+			<section class="time-picker-container">
 				<p>TIME</p>
-				<input id="time-picker" type="time">
+				<input
+					type="time"
+					class="time-picker"
+					aria-label="Time Input Field"
+				>
 				<hr>
 			</section>
 			<section>
-				<p id="date-title">DATE</p>
+				<p class="date-title">DATE</p>
 				<hr>
 			</section>
-			<header id="date-picker-header">
-				<button id="prev-arrow" type="submit">
+			<header class="date-picker-header">
+				<button type="submit" class="prev-arrow">
 					<svg
-						height="25"
 						viewBox="0 0 24 24"
-						width="25"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<title>menu-left</title>
 						<path d="M14,7L9,12L14,17V7Z"/>
 					</svg>
 				</button>
-				<div id="month-displayer">Month / Year</div>
-				<button id="next-arrow" type="submit">
+				<div class="month-displayer">Month / Year</div>
+				<button type="submit" class="next-arrow">
 					<svg
-						height="25"
 						viewBox="0 0 24 24"
-						width="25"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<title>menu-right</title>
@@ -428,7 +387,7 @@
 					</svg>
 				</button>
 			</header>
-			<section id="days-of-week">
+			<section class="days-of-week">
 				<p>M</p>
 				<p>T</p>
 				<p>W</p>
@@ -437,17 +396,15 @@
 				<p>S</p>
 				<p>S</p>
 			</section>
-			<section id="days-container"></section>
+			<section class="days-container"></section>
 		</dialog>
 
-		<dialog id="priority-dialog">
-			<div id="priority-options">
-				<div id="priority-one" class="priority-icon">
+		<dialog class="priority-dialog">
+			<div class="priority-options">
+				<div class="priority-one priority-icon">
 					<svg
-						id="first-priority-icon"
-						height="20"
+						class="first-priority-icon"
 						viewBox="0 0 24 24"
-						width="20"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<title>flag</title>
@@ -455,12 +412,10 @@
 					</svg>
 					<button type="button">Priority 1</button>
 				</div>
-				<div id="priority-two" class="priority-icon">
+				<div class="priority-two priority-icon">
 					<svg
-						id="second-priority-icon"
-						height="20"
+						class="second-priority-icon"
 						viewBox="0 0 24 24"
-						width="20"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<title>flag</title>
@@ -468,12 +423,10 @@
 					</svg>
 					<button type="button">Priority 2</button>
 				</div>
-				<div id="priority-three" class="priority-icon">
+				<div class="priority-three priority-icon">
 					<svg
-						id="third-priority-icon"
-						height="20"
+						class="third-priority-icon"
 						viewBox="0 0 24 24"
-						width="20"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<title>flag</title>
@@ -481,12 +434,10 @@
 					</svg>
 					<button type="button">Priority 3</button>
 				</div>
-				<div id="priority-four" class="priority-icon">
+				<div class="priority-four priority-icon">
 					<svg
-						id="fourth-priority-icon"
-						height="20"
+						class="fourth-priority-icon"
 						viewBox="0 0 24 24"
-						width="20"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<title>flag</title>
